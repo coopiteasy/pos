@@ -319,8 +319,9 @@ odoo.define('pos_container.container', function (require) {
                 if (old_orderline){
                     order.remove_orderline(old_orderline);
                 }
-                orderline.set_quantity(this.weight - container.weight);
-                orderline.set_gross_weight(this.weight);
+                orderline.set_quantity(orderline.quantity - container.weight);
+                var gross_weight = (this.weight + container.weight).toFixed(3);
+                orderline.set_gross_weight(gross_weight);
                 orderline.set_tare_mode('AUTO');
                 orderline.trigger('change', orderline);
             }

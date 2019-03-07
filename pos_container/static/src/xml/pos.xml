@@ -144,7 +144,7 @@
     </t>
 
     <t t-extend="PosTicket">
-        <t t-jquery='.receipt-orderlines' t-operation='inner'>              
+        <t t-jquery='.receipt-orderlines' t-operation='inner'>
             <table>
                 <colgroup>
                     <col width='50%' />
@@ -277,7 +277,7 @@
     </t>
 
     <t t-extend="XmlReceipt">
-        <t t-jquery='.orderlines' t-operation='inner'>              
+        <t t-jquery='.orderlines' t-operation='inner'>
             <t t-foreach='receipt.orderlines' t-as='line'>
                 <t t-if="line.tare_mode == undefined">
                     <t t-set='simple' t-value='line.discount === 0 and line.unit_name === "Unit(s)" and line.quantity === 1' />
