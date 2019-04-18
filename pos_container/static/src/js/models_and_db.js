@@ -122,9 +122,9 @@ odoo.define('pos_container.models_and_db', function (require) {
                 } else {
                     subreceipt = subreceipt.split('\n').slice(1).join('\n');
                     var qweb = new QWeb2.Engine();
-                        qweb.debug = config.debug;
-                        qweb.default_dict = _.clone(QWeb.default_dict);
-                        qweb.add_template('<templates><t t-name="subreceipt">'+subreceipt+'</t></templates>');
+                    // qweb.debug = config.debug;
+                    qweb.default_dict = _.clone(QWeb2.default_dict);
+                    qweb.add_template('<templates><t t-name="subreceipt">'+subreceipt+'</t></templates>');
 
                     return qweb.render('subreceipt',{'pos':self.pos,'widget':self.pos.chrome,'order':self, 'receipt': receipt}) ;
                 }
