@@ -374,7 +374,7 @@ odoo.define('pos_container.models_and_db', function (require) {
             this.trigger('change', this);
         },
         get_tare: function(){
-            return this.tare;
+            return this.tare || 0;
         },
         get_gross_weight: function(){
             return this.gross_weight;
