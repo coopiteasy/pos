@@ -213,7 +213,7 @@
                         <tr>
                             <td>
                                 <div style="margin-left:5%">
-                                    Tare : <t t-esc="orderline.get_tare()"/>
+                                    Tare : <t t-esc="orderline.get_container().weight"/>
                                     <t t-esc="orderline.get_unit().name"/>
                                 </div>
                             </td>
@@ -351,11 +351,13 @@
                                     <value t-att-value-decimals='pos.currency.decimals'><t t-esc='line.price_display' /></value>
                                 </right>
                             </line>
-                            <line indent='1'>
-                                <left>
-                                    Tare : <t t-esc='line.tare' /><t t-esc='line.unit_name' />
-                                </left>
-                            </line>
+                            <t t-if='line.tare'>
+                                <line indent='1'>
+                                    <left>
+                                        Tare : <t t-esc='line.tare' /><t t-esc='line.unit_name' />
+                                    </left>
+                                </line>
+                            </t>
                         </t>
                     </t>
                 </t>
