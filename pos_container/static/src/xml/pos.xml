@@ -351,6 +351,13 @@
                                     <value t-att-value-decimals='pos.currency.decimals'><t t-esc='line.price_display' /></value>
                                 </right>
                             </line>
+                            <t t-if='line.container'>
+                                <line indent='1'>
+                                    <left>
+                                        Tare : <t t-esc='line.container.weight' /><t t-esc='line.unit_name' />
+                                    </left>
+                                </line>
+                            </t>
                             <t t-if='line.tare'>
                                 <line indent='1'>
                                     <left>
