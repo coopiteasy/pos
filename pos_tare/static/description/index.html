@@ -400,11 +400,16 @@ selected order</p>
 <div class="section" id="usage">
 <h1><a class="toc-backref" href="#toc-entry-1">Usage</a></h1>
 <p>Install this add-on and configure your point of sale. To enable this addon, go to your point of sale configuration page. There, enable the electronic scale and barcode reader in the “IoT Box” section. In the same page, look up for the “Tare input method” field, and choose a tare method. There are three tare methods:</p>
+<blockquote>
 <ul class="simple">
 <li>“manual”: you’ll set the tare value when you weight the product;</li>
 <li>“barcode”: you’ll scan the tare value from a barcode;</li>
 <li>“both”: you can both of the above.</li>
 </ul>
+</blockquote>
+<div class="figure">
+<img alt="https://raw.githubusercontent.com/OCA/pos/16.0/pos_tare/static/description/pos_config.png" src="https://raw.githubusercontent.com/OCA/pos/16.0/pos_tare/static/description/pos_config.png" />
+</div>
 <p>To generate a tare barcode you need to use the default barcode nomenclature. The default barcode pattern is <cite>0700000{NNDDD}</cite>. Using that pattern, the barcode for a tare of 0.1kg is <cite>0700000001006</cite>. The <cite>pos_tare_barcode_generator</cite> allows you to create tare labels right from the POS.</p>
 <p>you can define a default tare on the product form view, if you always use the same type of packaging (or container) for a given product.</p>
 <div class="figure">
